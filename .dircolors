@@ -1,0 +1,49 @@
+RESET 0
+DIR 38;5;33
+EXEC 38;5;10
+LINK 35
+.tar 38;5;9
+.zip 38;5;9
+.gz 38;5;9
+.jpg 33
+.png 33
+.gif 33
+.mp3 34
+.wav 34
+*~ 90
+.bak 90
+.tmp 90
+.bak 00;90
+.old 00;90
+NORMAL 38;5;251    # off-white
+FILE 38;5;251      # same as NORMAL
+# Images
+.jpg 38;5;214
+.jpeg 38;5;214
+.png 38;5;214
+.gif 38;5;214
+.bmp 38;5;214
+.tiff 38;5;214
+.svg 38;5;214
+.webp 38;5;214
+
+# Audio
+.mp3 38;5;214
+.wav 38;5;214
+.flac 38;5;214
+.m4a 38;5;214
+.ogg 38;5;214
+
+# Video
+.mp4 38;5;214
+.mkv 38;5;214
+.mov 38;5;214
+.webm 38;5;214
+.avi 38;5;214
+.flv 38;5;214
+
+# Scripts
+.py 38;5;93    # purple
+.csv 38;5;15   # bright white
+
+.log 38;5;180   # light brown
