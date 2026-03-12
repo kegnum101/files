@@ -3,6 +3,7 @@ set -e
 
 BACKUP_FILE="brave-backup.tar.gz"
 TEMP_DIR="./temp"
+BRAVE_CONFIG="$HOME/.config/BraveSoftware/Brave-Browser"
 
 while true; do
     read -rp "Is the brave-backup.tar.gz backup file in this script directory OR is this a fresh install? (y/n): " answer
@@ -50,6 +51,21 @@ if [ -f "$BACKUP_FILE" ]; then
 
     echo "Cleaning up temp folder"
     rm -rf "$TEMP_DIR"
+
+    echo "Cleaning up stale Brave lock and state files..."
+
+    rm -f "$BRAVE_CONFIG"/SingletonLock
+    rm -f "$BRAVE_CONFIG"/SingletonSocket
+    rm -f "$BRAVE_CONFIG"/SingletonLock-*
+    rm -f "$BRAVE_CONFIG"/SingletonSocket-*
+    rm -f "$BRAVE_CONFIG/Local State"
+
+    rm -f "$BRAVE_CONFIG"/Default/SingletonLock
+    rm -f "$BRAVE_CONFIG"/Default/SingletonSocket
+    rm -f "$BRAVE_CONFIG"/Default/SingletonLock-*
+    rm -f "$BRAVE_CONFIG"/Default/SingletonSocket-*
+    
+    echo "Lock files cleared."
 
     echo "Brave backup restored successfully."
 else
