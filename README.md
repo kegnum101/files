@@ -10,3 +10,6 @@ https:/raw.githubusercontent.com/kegnum101/files/main/system.sh
 Initial bashrc and codium styling  
 https:/raw.githubusercontent.com/kegnum101/files/main/.bashrc  
 https:/raw.githubusercontent.com/kegnum101/files/main/.dircolors
+
+Install SSH sever  
+https:/raw.githubusercontent.com/kegnum101/files/main/ssh.sh
