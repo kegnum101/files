@@ -16,3 +16,6 @@ curl -O https:/raw.githubusercontent.com/kegnum101/files/main/ssh.sh
 
 Brave Installer  
 curl -O https:/raw.githubusercontent.com/kegnum101/files/main/brave.sh
+
+Remove Brave Completely
+curl -O https:/raw.githubusercontent.com/kegnum101/files/main/rmbrave.sh
