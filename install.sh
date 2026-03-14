@@ -14,7 +14,8 @@ sudo apt install -y \
     inotify-tools \
     zip \
     bc \
-    jq
+    jq \
+    libsdl2-dev
 
 echo "All packages installed successfully!"
 
@@ -44,4 +45,7 @@ dpkg -s bc | grep -E "Package|Status"
 echo --
 echo jq
 dpkg -s jq | grep -E "Package|Status"
+echo --
+echo libsdl2-dev
+dpkg -s libsdl2-dev | grep -E "Package|Status"
 echo --
