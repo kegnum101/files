@@ -21,6 +21,9 @@ UP=$(uptime -p | sed 's/up //g')
 # --- Cron Jobs ---
 CRON=$(ps aux | grep -c CRON)
 
+# --- MAC Address ---
+MAC=$(ip link show $(ip route get 1.1.1.1 | awk '{print $5; exit}') | awk '/ether/ {print $2}')
+
 # --- Detect disks ---
 DISKS_JSON="["
 FIRST=1
@@ -127,7 +130,7 @@ fi
 
 
 # --- Build JSON payload ---
-JSON="{\"server\":\"$SERVER_ID\",\"disks\":$DISKS_JSON,\"ram\":\"$RAM_USAGE\",\"load\":\"$LOAD_USAGE\",\"cpu\":\"$CPU_TEMP\",\"last_run\":\"$TIMESTAMP\",\"OS\":\"$OS\",\"IP\":\"$IP\",\"Uptime\":\"$UP\",\"Cron\":\"$CRON\"}"
+JSON="{\"server\":\"$SERVER_ID\",\"disks\":$DISKS_JSON,\"ram\":\"$RAM_USAGE\",\"load\":\"$LOAD_USAGE\",\"cpu\":\"$CPU_TEMP\",\"last_run\":\"$TIMESTAMP\",\"OS\":\"$OS\",\"IP\":\"$IP\",\"Uptime\":\"$UP\",\"Cron\":\"$CRON\",\"Mac\":\"$MAC\"}"
 
 # --- Echo instead of sending ---
 mosquitto_pub -h "$BROKER" -t "$TOPIC" -m "$JSON" -r
