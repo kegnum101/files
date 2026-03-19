@@ -7,6 +7,9 @@ curl -O https:/raw.githubusercontent.com/kegnum101/files/main/docker.sh
 System script to add machine to monitoring site  
 curl -O https:/raw.githubusercontent.com/kegnum101/files/main/system.sh
 
+Docker Stats script to add machine to monitoring site  
+curl -O https:/raw.githubusercontent.com/kegnum101/files/main/docker_stats.sh
+
 Initial bashrc and codium styling  
 curl -O https:/raw.githubusercontent.com/kegnum101/files/main/.bashrc  
 curl -O https:/raw.githubusercontent.com/kegnum101/files/main/.dircolors
