@@ -3,7 +3,7 @@
 SCRIPT_USER=$(last -w | grep -v "reboot\|wtmp\|^$" | head -1 | awk '{print $1}')
 SERVER_ID=$(cat /home/$SCRIPT_USER/scripts/id.conf)
 TOPIC="$SERVER_ID/docker"
-BROKER="mosquitto.lan"
+DOCKER="$(cat /home/$SCRIPT_USER/scripts/docker.conf)"
 
 # --- Timestamp ---
 TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
@@ -42,5 +42,4 @@ CONTAINERS_JSON+="]"
 # --- Build final JSON payload ---
 JSON="{\"server\":\"$SERVER_ID\",\"last_run\":\"$TIMESTAMP\",\"containers\":$CONTAINERS_JSON}"
 
-# --- Publish to MQTT with retain flag ---
-mosquitto_pub -h "$BROKER" -t "$TOPIC" -m "$JSON" -r
+echo "$JSON" > "${DOCKER}${SERVER_ID}.txt"
