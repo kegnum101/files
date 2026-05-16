@@ -8,7 +8,6 @@ sudo apt update
 sudo apt install -y \
     smartmontools \
     lm-sensors \
-    mosquitto-clients \
     python3-pip \
     python3-venv \
     inotify-tools \
@@ -24,9 +23,6 @@ dpkg -s smartmontools | grep -E "Package|Status"
 echo --
 echo lm-sensors
 dpkg -s lm-sensors | grep -E "Package|Status"
-echo --
-echo mosquitto-clients
-dpkg -s mosquitto-clients | grep -E "Package|Status"
 echo --
 echo python3-pip
 dpkg -s python3-pip | grep -E "Package|Status"
